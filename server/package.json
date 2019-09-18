@@ -1,0 +1,20 @@
+{
+  "name": "santrope-shedules-server",
+  "version": "1.0.0",
+  "description": "An Api for sanrope samp mobile RP",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "author": "bharrold <demsasha4yt@yandex.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.18.4"
+  }
+}
