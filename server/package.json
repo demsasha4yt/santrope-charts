@@ -1,5 +1,5 @@
 {
-  "name": "santrope-shedules-server",
+  "name": "santrope-charts-server",
   "version": "1.0.0",
   "description": "An Api for sanrope samp mobile RP",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "joi": "^14.3.1",
     "morgan": "^1.9.1",
     "mysql2": "^1.7.0",
+    "node-fetch": "^2.6.0",
     "sequelize": "^5.18.4"
   }
 }

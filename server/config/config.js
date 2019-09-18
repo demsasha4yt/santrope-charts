@@ -1,4 +1,6 @@
 module.exports = {
+  source: 'http://145.239.133.5/servers.json',
+  interval: 10000,
   port: 3000,
   db: {
     database: process.env.DB_NAME || 'uROkPuw2iQ',
