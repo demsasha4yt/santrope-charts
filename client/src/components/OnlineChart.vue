@@ -58,6 +58,10 @@
     },
     data () {
       return {
+        menuStart: false,
+        menuEnd: false,
+        menuDateStart: null,
+        menuDateEnd: null,
         min: 0,
         max: 10000,
         range: [0, 10000],
@@ -96,7 +100,7 @@
               ticks: {
                 maxTicksLimit: 11
               },
-              display: false,
+              display: true,
             }]
           },
           legend: {
@@ -114,7 +118,7 @@
       range: function () {
         this.dateStart = this.getDateFromStr(this.onlineData[this.range[0]].createdAt)
         this.dateEnd = this.getDateFromStr(this.onlineData[this.range[1]].createdAt)
-        this.filteredData = this.onlineData.slice(this.range[0], this.range[1] - this.range[0])
+        this.filteredData = this.onlineData.slice(this.range[0], this.range[1])
         this.fill()
       },
     },
