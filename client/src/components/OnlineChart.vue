@@ -51,7 +51,7 @@
 
 <script>
   import LineChart from './LineChart.js'
-  import axios from 'axios'
+  import OnlineService from '@/services/OnlineService'
   export default {
     components: {
       LineChart
@@ -120,7 +120,7 @@
     },
     methods: {
       update() {
-        axios.get(`http://localhost:3000/api/v1/online/online`)
+        OnlineService.online()
           .then(response => {
             this.onlineData = response.data.reverse()
             this.filteredData = this.onlineData
