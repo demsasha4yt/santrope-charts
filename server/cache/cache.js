@@ -3,11 +3,19 @@ const fetch = require('node-fetch')
 const { Online } = require('../config/database');
 
 module.exports = () => {
+  (async () => {
+    try {
+    const response = await fetch(config.source)
+    let data = await response.json()
+    Online.create(data.servers[0])
+  } catch (e) {
+    console.log(e)
+  }
+  })()
   setInterval(async () => {
     try {
       const response = await fetch(config.source)
       let data = await response.json()
-      console.log(data)
       Online.create(data.servers[0])
     } catch (e) {
       console.log(e)

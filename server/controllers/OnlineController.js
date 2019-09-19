@@ -28,7 +28,7 @@ exports.online = async(req, res, next) => {
 exports.ping = async(req, res, next) => {
   try {
     const onlines = await Online.findAll({
-      limit: 10000,
+      limit: 100,
       attributes: ['id', 'ping', 'createdAt'],
       order: [['id', 'DESC']]
     })

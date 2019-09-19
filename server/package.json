@@ -4,7 +4,9 @@
   "description": "An Api for sanrope samp mobile RP",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "cd ../client && npm run build",
+    "start": "node ./app.js"
   },
   "author": "bharrold <demsasha4yt@yandex.ru>",
   "license": "ISC",
