@@ -25,6 +25,20 @@ exports.online = async(req, res, next) => {
   }
 }
 
+exports.online.ip = async (req, res, next) => {
+  try {
+    const onlines = await Online.findAll({
+      limit: 10000,
+      attributes: ['players', 'createdAt'],
+      order: [['id', 'DESC']],
+      where: {addr: req.params.addr}
+    })
+    res.status(200).send(onlines)
+  } catch (e) {
+    next (e)
+  }
+}
+
 exports.ping = async(req, res, next) => {
   try {
     const onlines = await Online.findAll({

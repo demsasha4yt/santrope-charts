@@ -7,7 +7,10 @@ module.exports = () => {
     try {
     const response = await fetch(config.source)
     let data = await response.json()
-    Online.create(data.servers[0])
+    for (let i = 0; i < data.length; i++)
+    {
+        Online.create(data.servers[i])
+    }
   } catch (e) {
     console.log(e)
   }

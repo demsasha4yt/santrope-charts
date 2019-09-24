@@ -32,7 +32,9 @@ export default {
       let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "createdAt"
-
+      categoryAxis.renderer.labels.template.adapter.add("text", (label, target, key) => {
+        return label
+      });
       let label = categoryAxis.renderer.labels.template;
       label.wrap = true;
       label.maxWidth = 120;
@@ -40,6 +42,8 @@ export default {
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       valueAxis.tooltip.disabled = true;
       valueAxis.renderer.minWidth = 35;
+      valueAxis.min = 0
+      valueAxis.max = 1000
 
       let series = chart.series.push(new am4charts.LineSeries());
       series.minBulletDistance = 20;
@@ -51,10 +55,16 @@ export default {
       scrollbarX.series.push(series);
       scrollbarX.parent = chart.bottomAxesContainer;
 
+      chart.zoomOutButton.align = "left"
       chart.responsive.enabled = true;
       chart.data = this.onlineData.reverse()
       chart.cursor = new am4charts.XYCursor();
       chart.scrollbarX = scrollbarX;
+      chart.events.on("ready", function(){
+        let curDate = new Date();
+        let x = Number((new Date().getTime() - (curDate.getTime() - 1000*60*60*26))/1000/60/10).toFixed(0) - 1
+        categoryAxis.zoomToIndexes(chart.data.length - 1 - x, chart.data.length - 1)
+      })
     },
     update() {
         OnlineService.online()
