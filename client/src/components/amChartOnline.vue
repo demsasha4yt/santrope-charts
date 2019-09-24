@@ -1,6 +1,10 @@
 <template>
-  <div class="hello" ref="chartdiv">
-  </div>
+  <v-layout>
+    <v-flex class="sm11 ma-auto graph">
+      <div class="hello" ref="chartdiv">
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -85,5 +89,8 @@ export default {
 .hello {
   width: 100%;
   height: 500px;
+}
+.graph {
+  max-width: 100%
 }
 </style>
