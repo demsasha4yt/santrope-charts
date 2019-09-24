@@ -8,7 +8,7 @@
     </v-app-bar>
     <v-content>
       <!-- <OnlineChart /> -->
-      <AmChartOnline />
+      <AmChartOnline :height="300"/>
     </v-content>
   </v-app>
 </template>
