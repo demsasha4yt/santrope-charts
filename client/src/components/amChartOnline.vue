@@ -10,9 +10,8 @@
 <script>
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import OnlineService from '@/services/OnlineService'
-am4core.useTheme(am4themes_animated);
+
 am4core.options.queue = true;
 am4core.options.minPolylineStep = 5;
 am4core.options.onlyShowOnViewport = true;
