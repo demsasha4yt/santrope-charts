@@ -16,7 +16,7 @@ exports.online = async(req, res, next) => {
   try {
     const onlines = await Online.findAll({
       limit: 10000,
-      attributes: ['players', 'maxplayers', 'createdAt'],
+      attributes: ['players', 'createdAt'],
       order: [['id', 'DESC']]
     })
     res.status(200).send(onlines)
