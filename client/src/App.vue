@@ -7,18 +7,21 @@
       </v-toolbar-title>
     </v-app-bar>
     <v-content>
-      <OnlineChart />
+      <!-- <OnlineChart /> -->
+      <AmChartOnline />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import OnlineChart from './components/OnlineChart';
+//import OnlineChart from './components/OnlineChart';
+import  AmChartOnline from './components/amChartOnline'
 
 export default {
   name: 'App',
   components: {
-    OnlineChart
+    // OnlineChart,
+    AmChartOnline
   },
   data: () => ({
     //

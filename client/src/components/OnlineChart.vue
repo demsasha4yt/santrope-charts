@@ -58,10 +58,6 @@
     },
     data () {
       return {
-        menuStart: false,
-        menuEnd: false,
-        menuDateStart: null,
-        menuDateEnd: null,
         min: 0,
         max: 10000,
         range: [0, 10000],

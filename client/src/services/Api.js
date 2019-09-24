@@ -2,6 +2,6 @@ import axios from 'axios'
 
 export default () => {
   return axios.create({
-    baseURL: `http://${window.location.hostname}/`
+    baseURL: `http://flask.wraithox.beget.tech/`
   })
 }
