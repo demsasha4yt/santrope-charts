@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex class="sm11 ma-auto graph">
-      <div class="hello" ref="chartdiv">
+      <div ref="chartdiv">
       </div>
     </v-flex>
   </v-layout>
