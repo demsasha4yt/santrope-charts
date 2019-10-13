@@ -10,7 +10,6 @@ const onlineRouter = require('./routes/online')
 const app = express()
 
 app.use(morgan('combined'))
-app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static('static'));
 
